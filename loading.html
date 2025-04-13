@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[SEA/TH] Rust berry X2 PVP Vanilla</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+      overflow: hidden;
+    }
+
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    .video-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: -1;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .logo {
+      width: 280px;
+      max-width: 80vw;
+      margin-bottom: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin: 10px 0;
+    }
+
+    .ip {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      opacity: 0.8;
+    }
+
+    .description {
+      max-width: 600px;
+      margin-bottom: 30px;
+      line-height: 1.6;
+      white-space: pre-line;
+    }
+
+    .discord-btn {
+      background: #5865F2;
+      padding: 12px 28px;
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+
+    .discord-btn:hover {
+      background: #4752C4;
+    }
+
+    .lang-switch {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 2;
+    }
+
+    .lang-switch button {
+      margin: 0 5px;
+      padding: 6px 12px;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .lang-switch button:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+  </style>
+</head>
+<body>
+  <video id="bg-video" autoplay muted loop playsinline>
+    <source src="https://www.dropbox.com/scl/fi/py1ws1yr9i81stuillwfh/VDO_RUST.mp4?rlkey=hjy0i67d4ei6in3hyl2dq17ve&raw=1" type="video/mp4">
+  </video>
+  <div class="video-overlay"></div>
+
+  <div class="lang-switch">
+    <button onclick="switchLang('th')">ไทย</button>
+    <button onclick="switchLang('en')">EN</button>
+  </div>
+
+  <div class="content">
+    <img class="logo" src="https://i.imgur.com/xljaPGd.png" alt="Rust Server Logo">
+    <h1>[SEA/TH] Rust berry X2 PVP Vanilla</h1>
+    <div class="ip">IP Server: 183.88.252.91</div>
+
+    <div class="description" id="desc">
+      Rust berry X2 PVP Vanilla
+      No BP wipe / No Team Limit UI
+
+      🔥 เข้าร่วมความโหดในโลกแห่งการเอาตัวรอด!
+      🔫 ฟาร์ม สู้ และครองชัยในศึก PVP ดุเดือด
+
+      📜 กฎของเซิร์ฟเวอร์:
+      1. ห้ามโกงหรือใช้โปรแกรมช่วยเล่น (Script, Mod ฯลฯ)
+      2. ห้ามใช้คำหยาบหรือละเมิดผู้อื่น
+      3. เคารพกันและเล่นเพื่อความสนุก
+
+      🎮 ขอให้โชคดีในการเอาตัวรอด!
+    </div>
+
+    <a class="discord-btn" href="https://discord.gg/d4EecGy3dX" target="_blank">💬 เข้าร่วม Discord</a>
+  </div>
+
+  <!-- Background music -->
+  <audio id="bg-music" loop>
+    <source src="https://www.dropbox.com/scl/fi/xrjs4chk4cf2o87hzo40d/Limp-Bizkit-Take-A-Look-Around-Instrumental-MI2-soundtrack.mp3?rlkey=msym0rq53elozbx4wpnt4axlo&raw=1" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const langData = {
+      th: `Rust berry X2 PVP Vanilla\nNo BP wipe / No Team Limit UI\n\n🔥 เข้าร่วมความโหดในโลกแห่งการเอาตัวรอด!\n🔫 ฟาร์ม สู้ และครองชัยในศึก PVP ดุเดือด\n\n📜 กฎของเซิร์ฟเวอร์:\n1. ห้ามโกงหรือใช้โปรแกรมช่วยเล่น (Script, Mod ฯลฯ)\n2. ห้ามใช้คำหยาบหรือละเมิดผู้อื่น\n3. เคารพกันและเล่นเพื่อความสนุก\n\n🎮 ขอให้โชคดีในการเอาตัวรอด!`,
+
+      en: `Rust berry X2 PVP Vanilla\nNo BP wipe / No Team Limit UI\n\n🔥 Join the brutal world of survival!\n🔫 Gather resources, fight, and dominate in intense PVP battles\n\n📜 Rules and Etiquette:\n1. No cheating or using hacks (Scripts, Mods, etc.)\n2. No offensive language or disrespecting other players\n3. Respect all players and play for fun and fairness\n\n🎮 Good luck surviving!`
+    };
+
+    function switchLang(lang) {
+      document.getElementById('desc').textContent = langData[lang];
+    }
+
+    // Enable audio after user interaction
+    window.addEventListener('click', function enableAudio() {
+      const audio = document.getElementById('bg-music');
+      if (audio.paused) {
+        audio.play().catch(e => console.log("Autoplay failed:", e));
+      }
+      window.removeEventListener('click', enableAudio);
+    });
+  </script>
+</body>
+</html>
